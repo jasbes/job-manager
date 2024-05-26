@@ -1,10 +1,18 @@
 package com.rocketseat.jobmanager.modules.candidate.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.rocketseat.jobmanager.modules.candidate.CandidateEntity;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/candidates")
 public class CandidateController {
-
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    public CandidateEntity create(@RequestBody CandidateEntity candidate) {
+        log.info("Received candidate: {}", candidate);
+        return candidate;
+    }
 }
