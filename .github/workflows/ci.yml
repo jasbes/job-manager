@@ -20,5 +20,5 @@ jobs:
         uses: actions/upload-artifact@v4.3.3
         with:
           name: app.jar
-          path: /targer/job-manager.jar
+          path: /target/job-manager.jar
             
