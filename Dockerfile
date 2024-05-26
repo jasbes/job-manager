@@ -1,4 +1,4 @@
-FROM alpine/java:22-jre
+FROM azul/zulu-openjdk-alpine:22-latest
 RUN mkdir /app/
 COPY job-manager.jar /app/job-manager.jar
 EXPOSE 8080
