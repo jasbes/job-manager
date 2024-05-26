@@ -14,5 +14,10 @@ jobs:
         with:
           java-version: 22-ea
           distribution: 'zulu'
-      - name: Test with Maven
+      - name: Build with Maven
         run: mvn clean install
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: job-manager
+            
