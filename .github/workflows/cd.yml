@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: jeffthamy17/job-manager:latest
+          tags: jeffthamy17/job-manager:${{github.ref_name}}
