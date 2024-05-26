@@ -1,5 +1,6 @@
-FROM arm64v8/eclipse-temurin:22-jre-ubi9-minimal
-COPY job-manager.jar job-manager.jar
+FROM azul/zulu-openjdk-alpine:22-latest
+RUN mkdir /app/
+COPY job-manager.jar /app/job-manager.jar
 EXPOSE 8080
-CMD ["java", "-jar", "job-manager.jar"]
+CMD ["java", "-jar", "/app/job-manager.jar"]
 
