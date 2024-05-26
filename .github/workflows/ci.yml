@@ -18,8 +18,8 @@ jobs:
         run: mvn clean install
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.3
+        run: ls .
         with:
-          context: .
           name: app.jar
           path: /target/job-manager.jar
             
