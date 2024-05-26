@@ -19,6 +19,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           ecr: auto
           logout: true
+      - name: LS
+        run: ls -ltr
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.3.0
         with:
