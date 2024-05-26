@@ -5,23 +5,14 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  setup:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: ubuntu-latest
-            java: 22-ea
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 22
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ matrix.java }}
+          java-version: 22-ea
           distribution: 'zulu'
-          cache: maven
       - name: Test with Maven
-        run: mvn -B clean test
-      - name: Clean target
-        run: mvn clean
+        run: mvn clean install
