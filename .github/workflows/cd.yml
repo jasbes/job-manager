@@ -17,10 +17,12 @@ jobs:
         with:
           username: jeffthamy17
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          ecr: auto
+          logout: true
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.3.0
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: jeffthamy17/job-manager:${{github.ref_name}}
+          tags: jeffthamy17/job-manager:latest
