@@ -19,6 +19,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.3
         with:
+          context: .
           name: app.jar
-          path: job-manager.jar
+          path: /target/job-manager.jar
             
